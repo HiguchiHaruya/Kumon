@@ -22,6 +22,7 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W) && !isJamp)
         {
+            downspeed += jampSpeed * Time.deltaTime;
             isJamp = true;
             downspeed = jampSpeed;
         }
