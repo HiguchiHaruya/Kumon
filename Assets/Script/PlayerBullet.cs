@@ -15,22 +15,28 @@ public class PlayerBullet : MonoBehaviour
         BulletMove();
         CheckEnemies();
     }
-    private bool CheckEnemies()
+    private void CheckEnemies()
     {
+        Rect bulletRect = GetRect(gameObject);
         EnemyController[] enemyies = FindObjectsOfType<EnemyController>();
         foreach (var enemy in enemyies)
         {
-            float distance = Vector2.Distance(transform.position, enemy.transform.position);
-            if (distance <= (transform.localScale.x / 2 + enemy.transform.localScale.x / 2))
+            Rect enemyRect = GetRect(enemy.gameObject);
+            if (bulletRect.Overlaps(enemyRect))
             {
                 enemy.TakeDamage();
                 Destroy(gameObject);
                 break;
             }
         }
-        return false;
+        return;
     }
-
+    Rect GetRect(GameObject obj)
+    {
+        Vector2 pos = obj.transform.position;
+        Vector2 size = obj.GetComponent<SpriteRenderer>().bounds.size;
+        return new Rect(pos - size / 2, size);
+    }
     private void BulletMove()
     {
         pos.x += 0.1f;
