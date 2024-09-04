@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7254336354551728702}
   - component: {fileID: 6468751615404253330}
   - component: {fileID: 4641209696212812393}
+  - component: {fileID: -5373632167736250688}
   m_Layer: 0
   m_Name: Playerbulled
   m_TagString: Untagged
@@ -97,3 +98,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9f0947d22dffe4bad0be88caa4470c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &-5373632167736250688
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8931362978943481719}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

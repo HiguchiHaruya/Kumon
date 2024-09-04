@@ -6,9 +6,11 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class PlayerBullet : MonoBehaviour
 {
     Vector2 pos;
+    Rigidbody _rb;
     void Start()
     {
-        pos = PlayerMove.Instance.PlayerPos.position;
+        _rb = GetComponent<Rigidbody>();
+        pos = PlayerMove.Instance.PlayerPos;
     }
     void Update()
     {
@@ -39,9 +41,7 @@ public class PlayerBullet : MonoBehaviour
     }
     private void BulletMove()
     {
-        pos.x += 0.1f;
-        gameObject.transform.position = pos;
-        gameObject.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+        _rb.velocity = this.transform.right * 10;
         if (!GetComponent<Renderer>().isVisible) { Destroy(gameObject); }
     }
 }
